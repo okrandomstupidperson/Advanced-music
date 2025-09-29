@@ -1,3 +1,6 @@
-export music; {
+namespace music {
     //% block
-    export function helloWorld() }
+    export function MusicUpload(): void {
+        console.log("Music uploaded!");
+    }
+}
