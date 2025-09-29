@@ -1,6 +1,21 @@
+let uploadedMusic: number[] = [];
+
 namespace music {
+    //% blockId=music_upload block="upload music with ID %id"
+    //% id.min=1 id.max=9999
+    export function MusicUpload(id: number): void {
+        uploadedMusic.push(id);
+        console.log(`Music ID ${id} uploaded. Total uploads: ${uploadedMusic.length}`);
+    }
+
     //% block
-    export function MusicUpload(): void {
-        console.log("Music uploaded!");
+    export function ListUploadedIDs(): string {
+        return uploadedMusic.join(", ");
+    }
+
+    //% block
+    export function ClearUploads(): void {
+        uploadedMusic = [];
+        console.log("All uploaded music IDs cleared.");
     }
 }
